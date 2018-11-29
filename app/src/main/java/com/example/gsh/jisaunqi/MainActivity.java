@@ -1,23 +1,22 @@
+package com.example.gsh.jisaunqi;
 import android.app.Activity;
-import android.content.DialogInterface;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
-import com.example.gsh.jisaunqi.R;
+
 
 public class MainActivity extends Activity implements View.OnClickListener{
     Button bt_0,bt_1,bt_2,bt_3,bt_4,bt_5,bt_6,bt_7,bt_8,bt_9,bt_pt;
     Button bt_mul,bt_div,bt_add,bt_sub;
     Button bt_clr,bt_del,bt_eq;
     EditText et_input;
-    boolean clr_flag;    //判断et中是否清空
+    boolean clr_flag;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        //实例化对象
+
         setContentView(R.layout.first_layout);
         bt_0= (Button) findViewById(R.id.bt_0);
         bt_1= (Button) findViewById(R.id.bt_1);
@@ -39,7 +38,7 @@ public class MainActivity extends Activity implements View.OnClickListener{
         bt_eq= (Button) findViewById(R.id.bt_eq);
         et_input= (EditText) findViewById(R.id.et_input);
 
-        //设置按钮的点击事件
+
         bt_0.setOnClickListener(this);
         bt_1.setOnClickListener(this);
         bt_2.setOnClickListener(this);
@@ -102,7 +101,7 @@ public class MainActivity extends Activity implements View.OnClickListener{
                 str="";
                 et_input.setText("");
                 break;
-            case R.id.bt_del: //判断是否为空，然后在进行删除
+            case R.id.bt_del:
                 if(clr_flag){
                     clr_flag=false;
                     str="";
@@ -112,7 +111,7 @@ public class MainActivity extends Activity implements View.OnClickListener{
                     et_input.setText(str.substring(0,str.length()-1));
                 }
                 break;
-            case R.id.bt_eq: //单独运算最后结果
+            case R.id.bt_eq: //
                 getResult();
                 break;
         }
@@ -121,7 +120,7 @@ public class MainActivity extends Activity implements View.OnClickListener{
     private void getResult(){
         String exp=et_input.getText().toString();
         if(exp==null||exp.equals("")) return ;
-        //因为没有运算符所以不用运算
+
         if(!exp.contains(" ")){
             return ;
         }
@@ -130,11 +129,10 @@ public class MainActivity extends Activity implements View.OnClickListener{
             return;
         }
         clr_flag=true;
-        //截取运算符前面的字符串
+
         String s1=exp.substring(0,exp.indexOf(" "));
-        //截取的运算符
+
         String op=exp.substring(exp.indexOf(" ")+1,exp.indexOf(" ")+2);
-        //截取运算符后面的字符串
         String s2=exp.substring(exp.indexOf(" ")+3);
         double cnt=0;
         if(!s1.equals("")&&!s2.equals("")){
@@ -172,7 +170,7 @@ public class MainActivity extends Activity implements View.OnClickListener{
                 cnt=0;
             }
             if(op.equals("÷")){
-                cnt=0;
+               cnt=0;
             }
             if(!s1.contains(".")) {
                 int res = (int) cnt;

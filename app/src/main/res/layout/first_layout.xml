@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:background="@color/colorBackground"
     tools:context=".MainActivity"
     >
 
@@ -14,11 +14,12 @@
         android:layout_width="fill_parent"
         android:layout_height="90dp"
 
-        android:editable="false"
+
         android:gravity="right|bottom"
         android:paddingBottom="20dp"
         android:paddingRight="20dp"
-        android:textSize="50sp" />
+        android:textSize="50sp"
+        android:background="@color/colorBlue"/>
 
     <LinearLayout
         android:layout_width="fill_parent"
@@ -44,7 +45,7 @@
             android:layout_height="80dp"
             android:text="DEL"
             android:gravity="right|bottom"
-            android:textSize="30sp"
+            android:textSize="20sp"
             android:layout_marginLeft="10dp"
 
             android:paddingRight="15sp"
@@ -240,34 +241,35 @@
                     android:paddingBottom="15sp"
                     />
             </LinearLayout>
+
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
                 android:layout_marginTop="10dp">
+
                 <Button
-                    android:layout_width="170dp"
-                    android:layout_height="80dp"
                     android:id="@+id/bt_0"
-                    android:text="0"
-                    android:textSize="30sp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="80dp"
+                    android:baselineAligned="false"
                     android:gravity="right|bottom"
 
                     android:paddingRight="15sp"
                     android:paddingBottom="15sp"
-                    />
+                    android:text="0"
+                    android:textSize="30sp" />
+
                 <Button
+                    android:id="@+id/bt_pt"
                     android:layout_width="80dp"
                     android:layout_height="80dp"
-                    android:id="@+id/bt_pt"
-                    android:text="."
-                    android:textSize="30sp"
-                    android:gravity="right|bottom"
                     android:layout_marginLeft="10dp"
-
+                    android:gravity="right|bottom"
                     android:paddingRight="15sp"
                     android:paddingBottom="15sp"
-                    />
+
+                    android:text="."
+                    android:textSize="30sp" />
             </LinearLayout>
 
         </LinearLayout>
